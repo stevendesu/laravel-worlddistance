@@ -1,0 +1,22 @@
+{
+    "name": "stevendesu/world-distance",
+    "description": "A Laravel 5 package for calculating the distance between two given points on a globe. Optionally uses Google's Distance Matrix API. By default just uses math and assumes a spherical Earth.",
+    "keywords": ["laravel", "laravel 5", "distance", "matrix", "geography"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steven Barnett",
+            "email": "steven.abarnett@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "Stevendesu\\WorldDistance\\": "src"
+        }
+    },
+    "minimum-stability": "stable"
+}

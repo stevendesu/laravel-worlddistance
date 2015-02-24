@@ -18,8 +18,6 @@ class WorldDistanceServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('stevendesu/world-distance');
-		
 		$this->publishes([
 			__DIR__.'/../config/worlddistance.php' => config_path('worlddistance.php'),
 		]);

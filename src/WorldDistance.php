@@ -38,7 +38,13 @@ class WorldDistance {
 		$this->database = $database;
 	}
 	
-	// calculate the distance in kilometers
+	/**
+	 * Calculate the distance between two positions on the globe
+	 *
+	 * @param  Array  $LatLng1
+	 * @param  Array  $LatLng2
+	 * @param  bool   $googleMaps
+	 */
 	public function getDistance($LatLng1, $LatLng2, $googleMaps = false) {
 		if( $googleMaps ) {
 			return $this->getGoogleMapsDistance($LatLng1, $LatLng2);
@@ -49,7 +55,7 @@ class WorldDistance {
 		
 		$a = sin($dLat/2) * sin($dLat/2) + cos(deg2rad($LatLng1[0])) * cos(deg2rad($LatLng2[0])) * sin($dLon/2) * sin($dLon/2);
 		$b = 2 * asin(sqrt($a));
-		$c = $this->config->get('worlddistance.radius') * $b;
+		$c = $this->config->get('worlddistance.earth_radius') * $b;
 		
 		return $c;
 	}
